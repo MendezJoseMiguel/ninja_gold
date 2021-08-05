@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Ninja Gold</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hola {{request.session.nombre}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/reset/">Reset</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+
+    <form action="/process_money" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <h1 class="py-5 text-light text-center">💰💸 Ninja Gold 💸💰</h1>
+            <h2 class=" text-center text-white">Tu Oro {{ request.session.gold }}</h2>
+            <div class="row">
+                <div class="col-4 px-1">
+                    <div class="card" style="width: 17rem;">
+                        <img src="https://s1.eestatic.com/2017/06/14/cocinillas/cocinillas_223741754_116350540_1200x801.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Granja</h5>
+                            <p class="card-text">Prueba tu suerte</p>
+                            <a href="/process_money/granja" class="btn btn-primary">Gana oro!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 px-1">
+                    <div class="card" style="width: 17rem;">
+                        <img src="https://estaticos.muyinteresante.es/uploads/images/gallery/5ff22a865cafe884541d71d4/1-cueva-de-Europa.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cueva</h5>
+                            <p class="card-text">Prueba tu suerte</p>
+                            <a href="/process_money/cueva" class="btn btn-primary">Gana Oro!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 px-1">
+                    <div class="card" style="width: 17rem;">
+                        <img src="https://resizer.glanacion.com/resizer/fhK-tSVag_8UGJjPMgWrspslPoU=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/CUXVMXQE4JD5XIXX4X3PDZAVMY.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Casa</h5>
+                            <p class="card-text">Prueba tu Suerte</p>
+                            <a href="/process_money/casa" class="btn btn-primary">Gana Oro!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 px-1">
+                    <div class="card" style="width: 17rem;">
+                        <img src="https://img.freepik.com/vector-gratis/banner-casino-cartas-doradas-corona_1017-30139.jpg?size=626&ext=jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Casino</h5>
+                            <p class="card-text">Prueba tu Suerte</p>
+                            <a href="/process_money/casino" class="btn btn-primary">Gana Oro!</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="footer my-3">
+                    <h3 class=" text-light">Actividades</h3>
+                    {% for activity in request.session.activities %}
+                        <p class="{% if activity.golds >= 0 %}text-primary{% else %}text-danger{% endif %}">{{ activity.text }}</p>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+
+
+
+
+
+    
+</body>
+</html>

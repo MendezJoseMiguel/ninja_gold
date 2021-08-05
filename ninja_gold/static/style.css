@@ -1,0 +1,15 @@
+.col-4{
+    display: inline-block;
+    width: auto;
+}
+.footer{
+    border: 2px solid white;
+}
+body{
+    background-image: url(https://www.wallpaperkiss.com/wimg/b/112-1120539_big.jpg);
+    background-size:cover
+}
+#login{
+    background-image: url(https://i.pinimg.com/originals/9b/2d/70/9b2d7005782a213a7bfdd777b7b84fa9.gif);
+    background-size: cover;
+}
